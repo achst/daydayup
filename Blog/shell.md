@@ -18,3 +18,12 @@ sftp -P 22 -o "ProxyCommand=ssh tanshuai@10.104.23.157 -p 50092 -W %h:%p" tanshu
 注意:
 zsh shell 要转义符号 *, 改为 \*
 
+
+## redis 批量删除 key
+
+#### 批量删除以video开头的key
+`redis-cli keys video* | xargs redis-cli del`
+
+#### 以j，r开头，紧跟edis字符串的所有键
+`redis-cli keys [j,r]edis | xargs redis-cli del`
+
