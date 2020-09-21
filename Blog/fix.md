@@ -12,8 +12,15 @@ MySQL中MVCC的正确打开方式（源码佐证）
 - Q: mysql 查询耗时
 - A: 表没有加索引
 
-- Q: 进程内存飙升
-- A: 一般有全局对象
+- Q: Python 进程内存飙升
+- A: 一般有全局对象, 比如捕获 raise出来的全局异常对象, 比如业务全局变量的增加
+
+- Q: MySQL 新版本支持的 performance_schema 性能监控, 会导致 MySQL 内存一直上涨
+- A: 
+    - 阿里云RDS(MySQL) 可以关闭 performance_schema 参数, 会重启
+    - 可以考虑降低 innodb_buffer_pool_size 大小, 比如从 75% 改到 50%
+
+
 
 
 
