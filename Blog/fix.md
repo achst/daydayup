@@ -2,6 +2,8 @@
 
 TODO:
 
+热重启
+https://zhuanlan.zhihu.com/p/230888784
 
 - Q: MySQL中MVCC的正确打开方式（源码佐证）
 ————————————————
