@@ -88,6 +88,15 @@ https://mp.weixin.qq.com/s/6JNLyVlE6BWU-zScNuaYvQ
 - A: 
     - 阿里云RDS(MySQL) 可以关闭 performance_schema 参数, 会重启
     - 可以考虑降低 innodb_buffer_pool_size 大小, 比如从 75% 改到 50%
+    
+- Q: mysql特别长的字符串如何索引？
+- A: 使用前缀索引, 导入 es 等全文索引工具 (mysql 自带的全文索引似乎不太稳定)
+     - like 'abc%' 这种会走索引 (最左匹配原则)
+     - like '%abc%' 不会
+     - like '%abc' 这种要建立`反向索引` (通过翻转函数把字符串倒转过来, 再建立索引) (实际上也是利用最左匹配原则)
+
+
+
 
 
 
